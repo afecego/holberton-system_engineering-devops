@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod a+x [Name_File]
+chmod a+x hello
