@@ -1,2 +1,2 @@
 #!/bin/bash
-find -type f -printf "%T@ %p\n"  | sort -r | head -10
+find -type f | sort -r | head -10
