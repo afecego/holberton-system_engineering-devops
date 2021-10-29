@@ -5,5 +5,5 @@ j=9
 until [ $j -lt $i ]
 do
 echo "Best School"
-let i=i+1
+((i++))
 done
