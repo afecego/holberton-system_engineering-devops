@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying content of the current directory
+file="./*"
+for i in $file
+do
+	name=$(basename "$i" | cut -d '-' -f2-)
+	echo "$name"
+done
