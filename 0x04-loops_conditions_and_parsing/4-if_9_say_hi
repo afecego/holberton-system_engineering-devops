@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" and "Hi" in one line
+i=0
+while [ $i -le 9 ]
+do
+((i++))
+if [[ $i == 8 ]]
+then
+echo "Hi"
+continue
+fi
+echo "Best School"
+done
