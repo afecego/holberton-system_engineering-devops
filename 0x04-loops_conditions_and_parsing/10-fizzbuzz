@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Write a Bash script that displays numbers from 1 to 100.
+i=0
+while [ $i -le 99 ]
+do
+((i++))
+if [ $((i % 3)) == 0 ] && [ $((i % 5)) == 0 ]
+then
+echo "FizzBuzz"
+continue
+elif [[ $((i % 3)) == 0 ]]
+then
+echo "Fizz"
+continue
+elif [[ $((i % 5)) == 0 ]]
+then
+echo "Buzz"
+continue
+fi
+echo "$i"
+done
