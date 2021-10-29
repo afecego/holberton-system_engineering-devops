@@ -3,6 +3,6 @@
 i="To infinity and beyond"
 while true
 do
-	sleep 2
 	echo "$i"
+	sleep 2
 done
