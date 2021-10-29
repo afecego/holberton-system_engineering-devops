@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script is displaying the visitor IP along from the Apache log file
+# whit aditional conditions to show
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -r
