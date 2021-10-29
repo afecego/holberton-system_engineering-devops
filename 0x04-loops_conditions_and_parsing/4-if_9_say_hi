@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" and "Hi" in one line
 i=0
-while [ $i -le 9 ]
+while [ $i -le 10 ]
 do
 ((i++))
-if [[ $i == 8 ]]
+if [[ $i == 10 ]]
 then
 echo "Hi"
 continue
