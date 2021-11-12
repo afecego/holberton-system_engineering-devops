@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Change the IP address
 
-cp -f /etc/hosts cp.host
-echo -e '127.0.0.2	localhost'>cp.host
+cp /etc/hosts cp.host
+echo '127.0.0.2	localhost'>cp.host
 echo -e '\n8.8.8.8.8	facebook.com'>>cp.host
 cp -f cp.host /etc/host
