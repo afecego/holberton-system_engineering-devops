@@ -2,6 +2,5 @@
 # Change the IP address
 
 cp /etc/hosts ~/cp.host
-echo '127.0.0.2	localhost' > ~/cp.host
-echo -e '\n8.8.8.8.8	facebook.com' >> ~/cp.host
+echo -e'127.0.0.2	localhost\n8.8.8.8	facebook.com' > ~/cp.host
 cp -f ~/cp.host /etc/hosts
