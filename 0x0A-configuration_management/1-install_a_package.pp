@@ -1,4 +1,4 @@
 # Install a package
 package {'puppet-lint':
-    ensure => 'present',
+    ensure => '2.5.0',
 }
