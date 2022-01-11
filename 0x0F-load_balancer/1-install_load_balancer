@@ -5,11 +5,12 @@ apt-get -y upgrade
 apt-get -y install haproxy
 echo "
 frontend config
-    bind *:80
-    mode http
-    default_backend back_end
-    backend back_end
+	bind *:80
+	mode http
+	default_backend back_end
+	backend back_end
 
 balance roundrobin
-    server 3474-web-01 35.243.152.136:80 check    server 3474-web-02 54.196.195.128:80 check" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
+	server 3474-web-01 35.243.152.136:80 check
+	server 3474-web-02 54.196.195.128:80 check" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
 service haproxy restart
