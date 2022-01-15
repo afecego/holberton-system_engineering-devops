@@ -34,16 +34,14 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend firstbalance
+frontend www-https
         bind *:80
         mode http
         default_backend webservers
-
 frontend www-https
         bind *:443 ssl crt /etc/letsencrypt/live/www.afecego.tech/fullchain.pem
         mode http
         default_backend webservers
-
 backend webservers
         balance roundrobin
         mode http
