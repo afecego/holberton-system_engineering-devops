@@ -7,7 +7,6 @@ global
         user haproxy
         group haproxy
         daemon
-        tune.ssl.default-dh-param 2048
 
         # Default SSL material locations
         ca-base /etc/ssl/certs
@@ -34,7 +33,7 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend www-https
+frontend firstbalance
         bind *:80
         mode http
         default_backend webservers
