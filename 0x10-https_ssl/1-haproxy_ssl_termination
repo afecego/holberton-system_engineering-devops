@@ -1,4 +1,3 @@
-# HAproxy configuration file
 global
         log /dev/log    local0
         log /dev/log    local1 notice
@@ -42,9 +41,11 @@ frontend firstbalance
 
 frontend www-https
         bind *:443 ssl crt /etc/letsencrypt/live/www.afecego.tech/fullchain.pem
+        mode http
         default_backend webservers
 
 backend webservers
         balance roundrobin
+        mode http
         server 3474-web-01 35.243.152.136:80 check
         server 3474-web-02 54.196.195.128:80 check
