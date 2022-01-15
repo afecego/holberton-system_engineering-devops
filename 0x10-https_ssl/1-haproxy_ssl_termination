@@ -37,10 +37,13 @@ frontend firstbalance
         bind *:80
         mode http
         default_backend webservers
+
 frontend www-https
         bind *:443 ssl crt /etc/letsencrypt/live/www.afecego.tech/fullchain.pem
         mode http
+        http-request redirect scheme https unless { ssl_fc }
         default_backend webservers
+
 backend webservers
         balance roundrobin
         server 3474-web-01 35.243.152.136:80 check
