@@ -43,6 +43,5 @@ frontend www-https
         default_backend webservers
 backend webservers
         balance roundrobin
-        mode http
         server 3474-web-01 35.243.152.136:80 check
         server 3474-web-02 54.196.195.128:80 check
