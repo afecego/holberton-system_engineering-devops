@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Bash script that configures the container to fit the above requirements
+service apache2 stop
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+new_string="user nginx;\nworker_rlimit_nofile 8192;\n"
+sed -i "s|#user\ www-data;|$new_string|" /etc/nginx/nginx.conf
+service nginx restart

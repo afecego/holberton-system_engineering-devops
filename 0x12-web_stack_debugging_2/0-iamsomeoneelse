@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# script that accepts one argument, run the whoami command under the user passed as an argument
+if [[ "$(whoami)" != "any_name" ]]; then
+  echo "$1"
+  exit 1
+fi
