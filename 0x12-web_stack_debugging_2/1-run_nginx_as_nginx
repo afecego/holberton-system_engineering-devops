@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Bash script that configures the container to fit the above requirements
 pkill -9 apache2
+chmod 644 /etc/nginx/nginx.conf
 sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 new_string="user nginx;"
 sed -i "s|#user\ www-data;|$new_string|" /etc/nginx/nginx.conf
