@@ -12,15 +12,15 @@ if __name__ == "__main__":
     us = "/users"
     cod = "?userId={}".format(int(sys.argv[1]))
     web_all = requests.get(url + direct + cod).json()
-    web_user = requests.get(url + us + "/" + sys.argv[1]).json()
+    web_user = requests.get(url + us + "/" + int(sys.argv[1])).json()
 
     data_title = []
 
     for task in web_all:
-        data_title.append([sys.argv[1], web_user.get("username"),
+        data_title.append([int(sys.argv[1]), web_user.get("username"),
                           task.get("completed"), task.get("title")])
 
-    file_cvs = sys.argv[1] + ".cvs"
+    file_cvs = int(sys.argv[1]) + ".cvs"
 
     with open(file_cvs, mode='w', newline="") as csv_file:
         writer = csv.writer(csv_file, delimiter=',', quotechar='"',
