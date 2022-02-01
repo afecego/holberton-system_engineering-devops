@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """the task #0, extend your Python script to export data in the CSV format."""
 import csv
-import sys
 import requests
+import sys
 
 
 if __name__ == "__main__":
@@ -20,7 +20,7 @@ if __name__ == "__main__":
         data_title.append([int(sys.argv[1]), web_user.get("username"),
                           task.get("completed"), task.get("title")])
 
-    file_cvs = int(sys.argv[1]) + ".cvs"
+    file_cvs = str(sys.argv[1]) + ".cvs"
 
     with open(file_cvs, mode='w', newline="") as csv_file:
         writer = csv.writer(csv_file, delimiter=',', quotechar='"',
