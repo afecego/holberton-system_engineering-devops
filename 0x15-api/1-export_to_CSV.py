@@ -7,7 +7,7 @@ import sys
 
 if __name__ == "__main__":
 
-    arg = int(sys.argv[1])
+    arg = sys.argv[1]
     url = "https://jsonplaceholder.typicode.com"
     direct = "/todos"
     us = "/users"
@@ -21,7 +21,7 @@ if __name__ == "__main__":
         data_title.append([arg, web_user.get("username"),
                           task.get("completed"), task.get("title")])
 
-    file_cvs = "{}.cvs".format(arg)
+    file_cvs = '{}.cvs'.format(arg)
 
     with open(file_cvs, mode='w', newline='') as csv_file:
         writer = csv.writer(csv_file, delimiter=',', quotechar='"',
