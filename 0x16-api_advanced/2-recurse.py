@@ -35,7 +35,3 @@ def recurse(subreddit, hot_list=[], after=""):
             return (recurse(subreddit, hot_list, all))
         else:
             return (hot_list)
-
-
-# if __name__ == "__main__":
-#     recurse('programming', [], after="")
