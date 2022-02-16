@@ -5,6 +5,7 @@ import requests
 
 
 def number_of_subscribers(subreddit):
+    """get data of numbers of subscriptor"""
     url = "https://www.reddit.com/"
     path = f"r/{subreddit}/about.json"
     web = url + path
