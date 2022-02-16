@@ -9,7 +9,6 @@ def number_of_subscribers(subreddit):
     url = "https://www.reddit.com/"
     path = f"r/{subreddit}/about.json"
     web = url + path
-    print(web)
     header = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.2; Win64; x64)\
         AppleWebKit/537.36 (KHTML, like Gecko)\
