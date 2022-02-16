@@ -21,12 +21,11 @@ def top_ten(subreddit):
     header = {'User-Agent': agen}
     par = {'limit': 10}
 
-    web_all = requests.get(url, headers=header, params=par,
-                           allow_redirects=False)
-    if web_all.status_code == 200:
+    web = requests.get(url, headers=header, params=par, allow_redirects=False)
+    if web.status_code >= 300:
         print("None")
     else:
-        info = web_all.json().get('data').get('children')
+        info = web.json().get('data').get('children')
         for i in info:
             dicc = i.get('data').get('title')
             print(dicc)
