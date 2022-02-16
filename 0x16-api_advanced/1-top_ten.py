@@ -16,11 +16,13 @@ def top_ten(subreddit):
     chro = 'Chrome/75.0.3770.100 Safari/537.36'
     agen = moz + ' ' + app + ' ' + chro
     header = {'User-Agent': agen}
+    par = {'limit': 10}
 
-    web_all = requests.get(url, headers=header, allow_redirects=False)
+    web_all = requests.get(url, headers=header, params=par,
+                           allow_redirects=False)
     if web_all.status_code == 200:
         info = web_all.json().get('data').get('children')
-        for i in info[0:10]:
+        for i in info:
             dicc = i.get('data').get('title')
             print(dicc)
     else:
