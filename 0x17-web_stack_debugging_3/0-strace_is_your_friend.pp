@@ -1,8 +1,5 @@
 # fix file of wp
 file_line {'fix-wp':
-  ensure            => present,
-  path              => '/var/www/html/wp-settings.php',
-  line              => "require_once( ABSPATH . WPINC . '/class-wp-locale.php' );",
-  match             => "require_once( ABSPATH . WPINC . '/class-wp-locale.phpp' );",
-  match_for_absence => true,
+  command   => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path      => ':/usr/share/php:/usr/share/pear',
 }
